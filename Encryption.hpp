@@ -11,6 +11,8 @@ public:
 	public:
 
 		ECRYPT_ctx ctx;
+		//Array< char > Stream;
+		u8 Stream[64];
 
 		Context();
 
@@ -18,8 +20,9 @@ public:
 
 		void SetupIV(unsigned char *IV);
 	
-		std::string Process(unsigned char *Data, int len = NULL);
+		unsigned char* Process(unsigned char *Data, int len = NULL);
 	
+		unsigned char* getInputAsCharacters();
 	};
 
 	Context In;
